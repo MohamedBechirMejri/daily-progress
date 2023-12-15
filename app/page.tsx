@@ -12,8 +12,8 @@ export default function Home() {
   const [tasks, setTasks] = useState(current.tasks);
 
   return (
-    <div className="grid grid-cols-7 grid-rows-[repeat(7,minmax(0,1fr))] gap-4 h-[100svh] w-full p-3">
-      <div className="[grid-row:span_7/span_7] border-4 border-black">
+    <div className="grid grid-cols-[1fr,6fr] gap-4 h-[100svh] w-full p-3">
+      <div className="border border-black rounded-2xl">
         <h1>History</h1>
         <div>
           {history.map(h => (
@@ -21,7 +21,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="col-span-5 row-span-6 border-4 border-black">
+      <div className="border border-black rounded-2xl grid grid-rows-[auto,1fr,auto] overflow-hidden">
         <h1>{current?.name}</h1>
         <div>
           {current?.tasks.map((task: any) => {
@@ -29,18 +29,9 @@ export default function Home() {
             return <div key={task.id}>{details.task}</div>;
           })}
         </div>
-      </div>
-      <div className="col-span-5 col-start-2 row-start-7 grid grid-cols-[1fr,12rem] gap-4">
-        <input type="text" className="border-4 border-black h-full w-full" />
-        <button className="border-4 border-black h-full w-full">submit</button>
-      </div>
-
-      <div className="[grid-row:span_7/span_7] border-4 border-black">
-        <h1>History</h1>
-        <div>
-          {history.map(h => (
-            <div key={h.id}>{h.name}</div>
-          ))}
+        <div className="w-full flex p-4 gap-4">
+          <input type="text" className="w-full border p-4 rounded-2xl" />
+          <button className="p-4 border rounded-2xl px-8">s</button>
         </div>
       </div>
     </div>
