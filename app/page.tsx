@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 
+import p from "~/data/placeholders.json";
+
 export default function Home() {
-  const [history, setHistory] = useState([]);
-  const [current, setCurrent] = useState<any>(null);
-  const [input, setInput] = useState("");
-  const [overlay, setOverlay] = useState(null);
+  const [projects, setProjects] = useState(p);
+  const [project, setProject] = useState(projects[0]);
+  const [history, setHistory] = useState(project.history);
+  const [current, setCurrent] = useState(project.history[0]);
+  const [tasks, setTasks] = useState(current.tasks);
 
   return (
     <div className="grid grid-cols-5 grid-rows-5 gap-4 h-[100svh] w-full">
@@ -14,7 +17,7 @@ export default function Home() {
         <h1>History</h1>
         <div>
           {history.map(h => (
-            <div key={h}>{h}</div>
+            <div key={h.id}>{h.name}</div>
           ))}
         </div>
       </div>
@@ -23,7 +26,7 @@ export default function Home() {
         <div>
           {current?.tasks.map((task: any) => {
             const details = task.lifespan.at(-1);
-            return <div key={task.id}>{details.name}</div>;
+            return <div key={task.id}>{details.task}</div>;
           })}
         </div>
       </div>

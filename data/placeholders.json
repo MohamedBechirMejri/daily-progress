@@ -1,0 +1,36 @@
+[
+  {
+    "id": "aqwuaman",
+    "name": "dw",
+    "members": ["test", "test2"],
+    "createdAt": "2016-01-01T00:00:00.000Z",
+    "updatedAt": "2016-01-01T00:00:00.000Z",
+    "history": [
+      {
+        "id": "awuaman",
+        "name": "date tasks",
+        "createdAt": "2016-01-01T00:00:00.000Z",
+        "createdBy": "test",
+        "deleted": false,
+        "tasks": [
+          {
+            "createdAt": "2016-01-01T00:00:00.000Z",
+            "createdBy": "test",
+            "deleted": false,
+            "id": "awuaman",
+            "lifespan": [
+              {
+                "task": "test",
+                "updatedAt": "2016-01-01T00:00:00.000Z",
+                "updatedBy": "test",
+                "details": "testkjfkjfnv",
+                "status": "done",
+                "priority": "high"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
